@@ -18,7 +18,7 @@ function Features() {
             text: "Lorem ipsum dolor, sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elit. Libero deserunt commodi quos adipisci! Corporis.",
             button: "learn more",
             image: featureImage2,
-            style: "flex-row-reverse"
+            style: "md:flex-row-reverse"
         },
         {
             heading: "Grow your profit and track your investments",
@@ -31,12 +31,13 @@ function Features() {
 
     return (
         <section id='features' className='py-32 px-8 md:px-16 lg:px-24'>
-            <h2 className='text-4xl capitalize font-bold text-center mb-20'>
+            <h2 className='text-3xl max-w-4xl mx-auto capitalize font-bold text-center mb-10 md:mb-20'>
                 Market sentiments, portfolio, and run the infrastructure of your choice
             </h2>
 
-            {items.map(item => (
+            {items.map((item, index) => (
                 <FeatureItem
+                    key={index}
                     heading={item.heading}
                     image={item.image}
                     text={item.text}

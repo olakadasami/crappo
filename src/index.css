@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rubik:wght@400;500;600;700&display=swap');
 
+#subscribe {
+    background-image: url('/newsletter-box.png');
+}
+
+#image {
+    transition: all 5s;
+}
+
+#image:hover {
+    transform: rotate(180deg);
+}
 
 body {
     font-family: Rubik, Arial, Helvetica, sans-serif;

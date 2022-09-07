@@ -1,5 +1,6 @@
 import whyImage from '../assets/why-img.png'
 import FeatureItem from './FeatureItem'
+import Numbers from './Numbers'
 
 function Why() {
 
@@ -8,11 +9,13 @@ function Why() {
         text: "Lorem ipsum dolor, sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elit. Libero deserunt commodi quos adipisci! Corporis.",
         button: "learn more",
         image: whyImage,
-        style: "flex-row-reverse"
+        style: "md:flex-row-reverse"
     }
 
     return (
         <section id='why' className='py-32 px-8 md:px-16 lg:px-24'>
+
+            <Numbers />
 
             <FeatureItem
                 heading={item.heading}
