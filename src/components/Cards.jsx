@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { IoIosArrowForward } from 'react-icons/io'
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 
 import image1 from '../assets/bitcon.png'
 import image2 from '../assets/ethereum.png'
@@ -28,7 +28,16 @@ const items = [
     },
 ]
 
-export function Card({ image, heading, small, text }) {
+const cardVariant = {
+    start: {
+        opacity: 0
+    },
+    end: {
+        opacity: 1
+    }
+}
+
+export function Card({ image, heading, small, text, index }) {
 
     const [show, setShow] = useState(false)
 
@@ -39,9 +48,13 @@ export function Card({ image, heading, small, text }) {
         setShow(false)
     }
     return (
-        <motion.div 
-        
-        onMouseOver={showHandler} onMouseOut={hideShowHandler} className='text-primary z-10 bg-white shadow-xl transition-all ease duration-400 hover:text-white hover:bg-violet-900 px-4 py-16
+        <motion.div
+            variants={cardVariant}
+            whileInView='end'
+            initial="start"
+            transition={{ delay: index - 1 }}
+
+            onMouseOver={showHandler} onMouseOut={hideShowHandler} className='text-primary z-10 bg-white shadow-xl transition-all ease duration-400 hover:text-white hover:bg-violet-900 px-4 py-16
          rounded-3xl rounded-tl-none rounded-br-none flex flex-col text-center justify-center items-center w-80'>
             <div className='w-20 mb-8'>
                 <img className='w-full' src={image} alt='image' />
@@ -77,6 +90,7 @@ function Cards() {
                     heading={item.heading}
                     small={item.small}
                     text={item.text}
+                    index={index}
                 />
             ))}
         </div>

@@ -4,13 +4,6 @@
     background-image: url('/newsletter-box.png');
 }
 
-#image {
-    transition: all 5s;
-}
-
-#image:hover {
-    transform: rotate(180deg);
-}
 
 body {
     font-family: Rubik, Arial, Helvetica, sans-serif;
